@@ -1,0 +1,68 @@
+
+.CourseContentPage{
+    display: flex;
+    align-items: center;
+    height: 700px;
+}
+.CourseContentPage.column {
+    flex-direction: column;
+}
+
+.CourseContentPage-Details{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 90%;
+    width: 30%;
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+    border: .5px solid rgb(173, 173, 173);
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px rgb(150, 150, 150);
+}
+.CourseContentpage-Container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.CourseContentpage-Container-Title{
+    position: absolute;
+    left: 5%;
+    border-bottom: 2px solid grey;
+    width: 92%;
+}
+.CourseContainerpage-buttons{
+    position: absolute;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.CoursContentpage-button{
+    width: 90%;
+    height: 100px;
+    font-size: x-large;
+    margin: 20px -4px 0 0;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+#CourseContentPage-Details-img{
+    position: absolute;
+    top: 2%;
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 30%;
+}
+.CourseContentpage-Dropdown{
+    border: 1px solid rgb(195, 195, 195);
+    width: 90%;
+    border-radius: 0 0 15px 15px;
+    background-color: rgb(249, 249, 249);
+    padding: 0;
+    margin: 0;
+}

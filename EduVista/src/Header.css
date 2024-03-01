@@ -1,0 +1,82 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.8s;
+    padding: 20px 5%;
+    z-index: 100000;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.not-scrolled .logo{
+    position: relative;
+    font-weight: 700;
+    transition: 0.8s;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    font-family: serif;
+}
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+}
+header ul li{
+    position: relative;
+    list-style: none;
+}
+header ul li a{
+    position: relative;
+    
+    padding: 15px;
+    font-size: 17px;
+    transition: 0.4s ease;
+    color: white;
+    text-decoration: none;
+}
+header li a:hover{
+    filter: drop-shadow(0 0 2em #646cffaa);
+    color: rgb(0, 195, 255);
+    width: 300px;
+    border-radius: 15px;
+    width: max-content;
+}
+header .navbar-image{
+    display: none;
+    transition: 1.0s ease;
+}
+.sticky .navbar-image {
+    display: flex;
+    height: 80px;
+    margin-left: auto; /* Adjust the margin as needed */
+    transition: 1.0s ease;
+    margin-left: 0;
+}
+.sticky{
+    background-color: rgb(255, 255, 255);
+    padding: 1px 5%;
+    box-shadow:0 0 10px 0 rgb(0, 0, 0,0.3);
+    height: 80px;
+}
+.sticky ul li a{
+    color: black;
+}
+.sticky .logo {
+    display: none;
+}
+.sticky ul li a:hover{
+    color: rgb(0, 170, 255);
+    background-color: rgba(200, 200, 200, 0.15);
+}
+
+#account-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

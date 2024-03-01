@@ -1,0 +1,36 @@
+#Login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+
+#login-button{
+    width: 100%;
+    padding: 3% 15% 3% 15%;
+    border-radius: 5px;
+    align-self: center;
+    margin: 10% 0 3% 0;
+    background-color: #55ddff;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    transition: .3s ease;
+}
+#login-button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: rgb(50, 50, 50);
+}
+
+#login-label{
+    color:grey;
+}
+#login-input{
+    margin-top: 5px;
+    padding: 5%;
+    border: 2px solid rgba(80, 80, 80, 0.2);
+    border-radius: 5px;
+    font-size: medium;
+}
