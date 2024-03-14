@@ -1,0 +1,47 @@
+/* CarouselCard.css */
+
+.carousel-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 250px; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .carousel-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .carousel-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .carousel-card p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .carousel-card .button-container {
+    margin-top: 20px;
+  }
+  
+  .carousel-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .carousel-card button:hover {
+    background-color: #0056b3;
+  }
+  

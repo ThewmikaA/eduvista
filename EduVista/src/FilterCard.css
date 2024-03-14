@@ -1,0 +1,48 @@
+/* FilterCard.css */
+
+.filter-card {
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .filter-card h2 {
+    margin-top: 0;
+    color: #333; /* Dark gray text color */
+  }
+  
+  .buttons-container {
+    display: flex;
+    flex-direction: column; /* Align buttons vertically */
+  }
+  
+  .button-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    gap: 10px; /* Adjust spacing between buttons */
+  }
+  
+  .button-group button {
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    width: 200px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    padding: 10px;
+    background-color: #fff; /* White background color */
+    color: #000; /* Black text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-group button img {
+    margin-right: 5px; /* Add spacing between icon and text */
+  }
+  
+  .button-group button:hover {
+    background-color: #e3e3e3; /* Light gray background color on hover */
+  }
+  

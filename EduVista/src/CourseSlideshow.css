@@ -1,0 +1,42 @@
+/* Slideshow.css */
+
+/* Styles for slideshow container */
+.slideshow-container {
+  width: calc(100% - 40px); /* Adjust the width with margins */
+  height: calc(700px - 40px); /* Adjust the height with margins */
+  margin: 20px; /* Add margins */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Styles for slideshow image */
+.slideshow-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Styles for previous and next buttons */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  font-size: 24px; /* Adjust the size of the arrows */
+  color: white; /* Arrow color */
+  background-color: rgba(0, 0, 0, 0.5); /* Background color of the buttons */
+  border: none;
+  padding: 10px;
+}
+
+/* Style for previous button */
+.prev {
+  left: 0;
+}
+
+/* Style for next button */
+.next {
+  right: 0;
+}

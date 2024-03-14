@@ -1,0 +1,114 @@
+
+
+/* Add this rule to remove margin and padding from body and html */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Set width to fill the entire viewport */
+}
+
+/* Rest of your existing CSS */
+.cards-container {
+    margin-top: 20px; /* Add margin to the top */
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for multiple rows */
+    justify-content: center; /* Center align the cards horizontally */
+}
+
+.cards-row {
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for multiple rows */
+    justify-content: center; /* Center align the cards horizontally */
+}
+
+.card-container {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border: 1px solid #ccc; /* Light gray border */
+    width: calc(25% - 40px); /* Adjusted width for each card (25% of the container width minus margin) */
+    margin: 10px; /* Add margin to separate cards */
+    background-color: #222; /* Dark background color */
+    padding: 20px; /* Add padding */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for smooth color change and scale effect */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.card-container:hover {
+    background-color: #701010; /* Darker background color on hover */
+    transform: scale(1.05); /* Scale up card slightly on hover */
+}
+
+h2 {
+    color: #fff; /* White text color */
+}
+
+p {
+    color: #ccc; /* Light gray text color */
+}
+
+.button-container {
+    margin-top: auto; /* Push the button to the bottom of the card */
+    width: 100%; /* Make the button full width */
+}
+
+.button-container button {
+    width: 100%; /* Make the button full width */
+    padding: 10px 20px; /* Add padding to the button */
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Darker blue background color on hover */
+}
+
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pagination button {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    padding: 5px 10px;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .pagination button:hover {
+    background-color: black;
+    color: white;
+  }
+  
+
+.filter-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .filter-button:hover {
+    background-color: #45a049;
+  }
+
+  .result-count {
+    font-size: larger; /* Adjust font size as needed */
+    text-align: center; /* Center align the text */
+    margin-bottom: 20px; /* Add some space below the text */
+}

@@ -1,0 +1,59 @@
+/* Card.css */
+
+.img1 img {
+    width: 100%; 
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #ddd; /* Light gray border */
+    border-radius: 10px; /* Add border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease; /* Add transition for smooth scale effect */
+}
+
+.img1:hover img {
+    transform: scale(1.05); /* Scale up image slightly on hover */
+}
+
+.card-container {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border: 1px solid #ccc; /* Light gray border */
+    width: 200px; /* Adjusted width for each card */
+    background-color: #222; /* Dark background color */
+    padding: 20px; /* Add padding */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for smooth color change and scale effect */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.card-container:hover {
+    background-color: #701010; /* Darker background color on hover */
+    transform: scale(1.05); /* Scale up card slightly on hover */
+}
+
+h2 {
+    color: #fff; /* White text color */
+}
+
+p {
+    color: #ccc; /* Light gray text color */
+}
+
+.button-container {
+    margin-top: auto; /* Push the button to the bottom of the card */
+    width: 100%; /* Make the button full width */
+}
+
+.button-container button {
+    width: 100%; /* Make the button full width */
+    padding: 10px 20px; /* Add padding to the button */
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Darker blue background color on hover */
+}

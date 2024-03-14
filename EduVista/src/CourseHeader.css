@@ -1,0 +1,108 @@
+ /* CourseHeader.css */
+ header {
+  background-color: #000; /* Black */
+  color: #fff; /* White */
+  padding: 20px;
+  text-align: left; /* Align text to the left */
+  transition: top 0.3s; /* Add transition effect for smooth movement */
+  margin-bottom: 20px; /* Add margin at the bottom of the header */
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Title styles */
+header h1 {
+  font-size: 32px; /* Increase font size */
+  color: #00a2ff; /* Set title color to gold */
+  text-transform: uppercase; /* Transform text to uppercase */
+  margin: 0; /* Remove margin */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: left;
+}
+
+/* Navigation styles */
+nav ul {
+  list-style-type: none;
+  margin: 20;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.auth-buttons {
+  margin-right: 20px;
+}
+
+.signup-button,
+.login-button {
+  color: white;
+  border: 2px solid transparent;
+  padding: 10px 30px;
+  border-radius: 5px; /* Maintain a slight border-radius */
+  cursor: pointer;
+  width: 150px; /* Fixed width */
+  font-size: 16px; /* Optional: adjust font size */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add transition for hover effects */
+}
+
+.signup-button:hover,
+.login-button:hover {
+  background-color: rgba(255, 0, 0, 0.5); /* Red background color on hover */
+  border-color: rgba(255, 0, 0, 0.5); /* Red border color on hover */
+}
+
+.login-button {
+  background-color: rgba(255, 255, 255, 0.5); /* White background color */
+  color: rgb(255, 255, 255); /* Black text color */
+  padding: 10px;
+}
+
+
+
+nav ul li {
+  display: inline;
+  margin-right: 0; /* Remove margin between navbar buttons */
+}
+
+nav ul li a {
+  color: #fff; /* White */
+  text-decoration: none;
+  padding: 10px 20px; /* Add padding to create button-like appearance */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Add transition for smooth hover effect */
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+nav ul li a:hover {
+  background-color: #fff; /* White */
+  color: #000; /* Black */
+}
+
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding: 5px 10px;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: black;
+  color: white;
+}
