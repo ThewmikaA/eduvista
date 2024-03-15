@@ -52,10 +52,18 @@ def recommend_courses(student_answers):
     # Filter courses by subject chosen by the student
     subject_courses = data[data['subject'] == student_answers[1]]
     # Filter courses by preferred difficulty level
-    level_courses = subject_courses[subject_courses['level'] == student_answers[0]]
-    # Sort courses by number of reviews in descending order if preferred
-    if student_answers[2] == 2:
-        level_courses = level_courses.sort_values(by='num_reviews', ascending=False)
+    if student_answers[0] == 3:  # All Levels
+        level_courses = subject_courses
+    else:
+        level_courses = subject_courses[subject_courses['level'] == student_answers[0]]
+    # Filter courses by number of reviews based on user's choice
+    # Highly Rated: >= 1000 reviews, Moderately Rated: >= 500 reviews, Low Rated: < 500 reviews
+    if student_answers[2] == 1:  # Highly Rated
+        level_courses = level_courses[level_courses['num_reviews'] >= 1000]  # Example threshold for highly rated
+    elif student_answers[2] == 2:  # Moderately Rated
+        level_courses = level_courses[level_courses['num_reviews'] >= 500]   # Example threshold for moderately rated
+    else:  # Low Rated
+        level_courses = level_courses[level_courses['num_reviews'] < 500]    # Example threshold for low rated
     # Get recommended courses within the same cluster, subject, and level, sorted by popularity (num_subscribers)
     recommended_courses = level_courses[level_courses['cluster'] == student_cluster[0]].sort_values(by='num_subscribers', ascending=False)
     # Optionally, fine-tune recommendations based on quiz marks or other factors
@@ -64,16 +72,7 @@ def recommend_courses(student_answers):
 # Questions to gather student preferences
 def ask_questions():
     print("Welcome! Let's find the best courses for you.")
-    while True:
-        try:
-            level = int(input("1. What is your preferred difficulty level for courses?\n   - 0: Beginner\n   - 1: Intermediate\n   - 2: Advanced\nYour choice: "))
-            if level not in [0, 1, 2]:
-                raise ValueError
-            break
-        except ValueError:
-            print("Please enter a valid choice (0, 1, or 2)")
-
-    print("2. What subject are you interested in?")
+    print("1. What subject are you interested in?")
     for code, subject in subject_map.items():
         print(f"   - {code}: {subject}")
     while True:
@@ -85,14 +84,30 @@ def ask_questions():
         except ValueError:
             print("Please enter a valid choice")
 
+    print("2. What is your preferred difficulty level for courses?")
+    for code, level in enumerate(['Beginner', 'Intermediate', 'Advanced', 'All Levels']):
+        print(f"   - {code}: {level}")
     while True:
         try:
-            num_reviews = int(input("3. How important is the number of reviews when choosing a course?\n   - 0: Not important\n   - 1: Somewhat important\n   - 2: Very important\nYour choice: "))
-            if num_reviews not in [0, 1, 2]:
+            level = int(input("Your choice: "))
+            if level not in [0, 1, 2, 3]:
                 raise ValueError
             break
         except ValueError:
-            print("Please enter a valid choice (0, 1, or 2)")
+            print("Please enter a valid choice (0, 1, 2, or 3)")
+
+    print("3. How would you like to filter the ratings of existing courses?")
+    print("   - 1: Highly Rated (>= 1000 reviews)")
+    print("   - 2: Moderately Rated (>= 500 reviews)")
+    print("   - 3: Low Rated (< 500 reviews)")
+    while True:
+        try:
+            num_reviews = int(input("Your choice: "))
+            if num_reviews not in [1, 2, 3]:
+                raise ValueError
+            break
+        except ValueError:
+            print("Please enter a valid choice (1, 2, or 3)")
 
     return [level, subject_choice, num_reviews, 0]  # Default value for 'num_subscribers'
 
@@ -101,7 +116,10 @@ def main():
     student_answers = ask_questions()
     recommended_courses = recommend_courses(student_answers)
     print("\nRecommended courses:")
-    print(recommended_courses)
+    if recommended_courses.empty:
+        print("No courses match your criteria.")
+    else:
+        print(recommended_courses)
 
 if __name__ == "__main__":
     main()
