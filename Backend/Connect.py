@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 
 #Data Preprocessing
-data = pd.read_csv('/Users/praveendesilva/Desktop/eduvista/Backend/udemy_courses.csv') 
+data = pd.read_csv('/Users/praveendesilva/PycharmProjects/eduvista/udemy_courses.csv') 
 
 data.fillna(0, inplace=True) 
 
@@ -17,6 +17,7 @@ subject_map = {
     2: 'Musical Instruments',
     3: 'Business'
 }
+
 
 features = ['level', 'subject', 'num_reviews', 'num_subscribers']  
 X = data[features]
@@ -37,18 +38,6 @@ kmeans = KMeans(n_clusters=optimal_k, random_state=42)
 kmeans.fit(X_scaled)
 data['cluster'] = kmeans.labels_
 
-#  Recommendation
-def recommend_courses(student_answers):
-    # Convert student's answers into DataFrame
-    student_courses = pd.DataFrame([student_answers], columns=['level', 'subject', 'num_reviews', 'num_subscribers'])
-    student_cluster = kmeans.predict(scaler.transform(student_courses))
-    subject_name = subject_map[student_answers[1]]
-    subject_courses = data[data['subject'] == student_answers[1]]  # Filter courses by subject
-    level_courses = subject_courses[subject_courses['level'] == student_answers[0]]   # Filter courses by level
-    if student_answers[2] == 2:
-        level_courses = level_courses.sort_values(by='num_reviews', ascending=False)
-    recommended_courses = level_courses[level_courses['cluster'] == student_cluster[0]].sort_values(by='num_subscribers', ascending=False)
-    return recommended_courses[['course_title', 'level', 'subject', 'num_reviews', 'num_subscribers']] 
 
 
 def ask_questions():
