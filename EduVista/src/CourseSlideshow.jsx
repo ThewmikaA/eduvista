@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import image1 from './assets/Machine_Learning.jpg';
-import image2 from './assets/shutterstock_520698799small.jpg';
+import image2 from './assets/Top-12-Pioneers-in-Education-scaled.jpg';
 import image3 from './assets/person-holds-a-book-over-a-stack-and-turns-the-page.jpg';   
-import './CourseSlideshow.css'; // Import CSS file for slideshow styles
+import './CourseSlideshow.css'; 
 
 function Slideshow() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -11,9 +11,8 @@ function Slideshow() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
-
-    return () => clearInterval(intervalId); // Cleanup function to clear interval on component unmount
+    }, 3000); 
+    return () => clearInterval(intervalId);
   }, [images.length]);
 
   const handlePrev = () => {
