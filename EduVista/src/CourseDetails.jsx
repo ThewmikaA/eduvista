@@ -17,10 +17,23 @@ function CourseDetails({ title, price, level, numReviews, numSubscribers, publis
       levelClassName = "";
   }
 
-
   const randomPublishedDate = new Date(
     new Date() - Math.floor(Math.random() * 100) * 24 * 60 * 60 * 1000
   ).toLocaleDateString();
+
+  const handleAddToCart = () => {
+    // Create a course object
+    const course = {
+      title,
+      price,
+      level,
+      numReviews,
+      numSubscribers,
+      publishedDate: publishedDate || randomPublishedDate // Use provided publishedDate or generate a random one
+    };
+    // Call the addToCart function passed from the parent component and pass the course object
+    addToCart(course);
+  };
 
   return (
     <div className="course-details-dialog left-position"> 
